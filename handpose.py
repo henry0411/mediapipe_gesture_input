@@ -1,4 +1,4 @@
-import keyboard
+import pyautogui
 import time
 
 #計算手勢時長
@@ -21,13 +21,13 @@ def maintenance_time(text):
         longtime=now-savetime
         if longtime>1:
             if text=='1' or text=='2' or text=='3' or text=='4' or text=='5' or text=='6' or text=='7' or text=='8' or text=='9'or text=='0':
-                keyboard.press_and_release(text)
+                pyautogui.hotkey('num'+text)
             elif text=='good':
-                pass
-            elif text=='no!!':
-                pass
+                pyautogui.hotkey('enter')
+            elif text=='no!!!':
+                pyautogui.hotkey('alt', 'f4')
             elif text=='ROCK!':
-                pass
+                pyautogui.hotkey('R', 'O','C','K','!','!')
             savetime=now
             return longtime
 

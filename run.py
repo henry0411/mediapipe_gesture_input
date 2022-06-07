@@ -89,7 +89,7 @@ with mp_hands.Hands(
                     finger_points.append((x,y))
                 if finger_points:
                     finger_angle = hand_angle(finger_points) # 計算手指角度，回傳長度為 5 的串列
-                    #print(finger_angle)                     # 印出角度 ( 有需要就開啟註解 )
+                    #print(finger_angle)                     # 印出角度 
                     text = handpose.hand_pos(finger_angle)            # 取得手勢所回傳的內容
                     staytime=handpose.maintenance_time(text)
 
