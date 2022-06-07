@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 import math
 import handpose
+import time
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -90,6 +91,8 @@ with mp_hands.Hands(
                     finger_angle = hand_angle(finger_points) # 計算手指角度，回傳長度為 5 的串列
                     #print(finger_angle)                     # 印出角度 ( 有需要就開啟註解 )
                     text = handpose.hand_pos(finger_angle)            # 取得手勢所回傳的內容
+                    staytime=handpose.maintenance_time(text)
+
                     cv2.putText(img, text, (30,120), fontFace, 5, (255,255,255), 10, lineType) # 印出文字
 
         cv2.imshow('camera', img)
